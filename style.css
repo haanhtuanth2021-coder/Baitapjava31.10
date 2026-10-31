@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin-top: 50px;
+}
+
+/* Định dạng khung hiển thị chính (id="image") */
+#image {
+    width: 500px;
+    height: 300px;
+    border: 5px solid #333;
+    margin: 20px auto;
+    background-color: #f1f1f1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Định dạng các ảnh nhỏ phía dưới */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.preview {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.preview:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+}
