@@ -1,6 +1,6 @@
 function upDate(previewPic) {
     // 3.1. Kiểm tra sự kiện đã kích hoạt chưa
-    console.log("Sự kiện mouseover đã kích hoạt!");
+    console.log("The mouseover event has been triggered!");
 
     // 3.2. In thông tin alt và src ra console
     console.log("Alt: " + previewPic.alt);
@@ -18,5 +18,5 @@ function unDo() {
     document.getElementById("image").style.backgroundImage = "url('')";
 
     // 4.2. Khôi phục lại đoạn văn bản ban đầu
-    document.getElementById("image").innerHTML = "Di chuột qua một hình ảnh bên dưới để hiển thị ở đây.";
+    document.getElementById("image").innerHTML = "Hover over an image below to display it here.";
 }
