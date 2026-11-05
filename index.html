@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device width, initial-scale=1.0">
-        <title>Interactive Photo Gallery</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Interactive Photo Gallery</h1>
-        <div id="image">
-            Hover over an image below to display it here.
-        </div>
-        <div class="gallery">
-        <img class="preview" alt="Lush, green spring scenery" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" onmouseover="upDate(this)" onmouseout="unDo()">
-        <img class="preview" alt="Sunset over the sea, radiant with golden hues" src="https://images.unsplash.com/photo-1519074069444-1ba4ea16d66c" onmouseover="upDate(this)" onmouseout="unDo()">
-        <img class="preview" alt="The majestic mountain, covered in white snow" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" onmouseover="upDate(this)" onmouseout="unDo()">
-        </div>
-        <script src="gallery.js"></script>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Photo Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Interactive Photo Gallery</h1>
+
+    <!-- Khung hiển thị hình nền và văn bản chính -->
+    <div id="image">
+        Hover over an image below to display here.
+    </div>
+
+    <!-- 6 hình ảnh với các sự kiện mouseover, mouseout, focus, blur và tabindex -->
+    <div class="gallery">
+        <img class="preview" tabindex="0" alt="Spring green nature scenery" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" onmouseover="upDate(this)" onmouseout="unDo()">
+        <img class="preview" tabindex="0" alt="Vibrant sunset over the ocean" src="https://images.unsplash.com/photo-1519074069444-1ba4ea16d66c" onmouseover="upDate(this)" onmouseout="unDo()">
+        <img class="preview" tabindex="0" alt="Majestic snow-covered mountain peak" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" onmouseover="upDate(this)" onmouseout="unDo()">
+        <img class="preview" tabindex="0" alt="Autumn forest with golden leaves" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" onmouseover="upDate(this)" onmouseout="unDo()">
+        <img class="preview" tabindex="0" alt="Serene blue lake reflection view" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" onmouseover="upDate(this)" onmouseout="unDo()">
+        <img class="preview" tabindex="0" alt="Starry night sky over tall pine trees" src="https://images.unsplash.com/photo-1511497584788-87676119257a" onmouseover="upDate(this)" onmouseout="unDo()">
+    </div>
+
+    <script src="gallery.js"></script>
+</body>
 </html>
