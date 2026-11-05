@@ -1,22 +1,42 @@
+// Yêu cầu 8: Trình nghe sự kiện onload và vòng lặp qua từng hình ảnh (Yêu cầu 9.b)
+window.onload = function() {
+    console.log("Trang web đã tải xong hoàn toàn.");
+    
+    // Lấy tất cả các hình ảnh có class là 'preview'
+    let images = document.querySelectorAll(".gallery img");
+    
+    // Viết vòng lặp for để duyệt qua từng hình ảnh và gán thêm sự kiện focus, blur
+    for (let i = 0; i < images.length; i++) {
+        console.log("Đang thiết lập sự kiện cho ảnh thứ: " + (i + 1));
+        
+        // Yêu cầu 6 & 9: Thêm trình nghe sự kiện focus (khi dùng bàn phím Tab)
+        images[i].addEventListener('focus', function() {
+            console.log("Sự kiện focus đã được kích hoạt trên ảnh số " + (i + 1));
+            upDate(this);
+        });
+        
+        // Yêu cầu 6: Thêm trình nghe sự kiện blur (khi rời focus) tương tự unDo
+        images[i].addEventListener('blur', function() {
+            console.log("Sự kiện blur đã được kích hoạt trên ảnh số " + (i + 1));
+            unDo();
+        });
+    }
+};
+
 function upDate(previewPic) {
-    // 3.1. Kiểm tra sự kiện đã kích hoạt chưa
-    console.log("The mouseover event has been triggered!");
+    console.log("Sự kiện kích hoạt (mouseover/focus)");
+    console.log("Alt text: " + previewPic.alt);
+    console.log("Image source: " + previewPic.src);
 
-    // 3.2. In thông tin alt và src ra console
-    console.log("Alt: " + previewPic.alt);
-    console.log("Src: " + previewPic.src);
-
-    // 3.3 & 3.4. Thay đổi nội dung văn bản thành thuộc tính alt của ảnh
+    // Thay đổi văn bản và hình nền
     document.getElementById("image").innerHTML = previewPic.alt;
-
-    // 3.5 & 3.6. Thay đổi hình nền của div#image thành src của ảnh đang rê chuột vào
     document.getElementById("image").style.backgroundImage = "url('" + previewPic.src + "')";
 }
 
 function unDo() {
-    // 4.1. Đưa hình nền trở lại rỗng ban đầu
+    console.log("Sự kiện khôi phục (mouseout/blur)");
+    
+    // Đưa về trạng thái ban đầu
     document.getElementById("image").style.backgroundImage = "url('')";
-
-    // 4.2. Khôi phục lại đoạn văn bản ban đầu
-    document.getElementById("image").innerHTML = "Hover over an image below to display it here.";
+    document.getElementById("image").innerHTML = "Hover over an image below to display here.";
 }
